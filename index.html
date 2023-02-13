@@ -73,8 +73,12 @@
 </style>
         <div class="alert alert-success" role="alert">
         You're viewing the homepage of <b>Researcher Tapomoy Adhikari</b>
+        <? echo $_SERVER["REMOTE_ADDR"]; ?>
+        <body> from <b><? echo $_SERVER["REMOTE_ADDR"]; ?> </b></body>
       </div>
-      
+      <body>
+        Your IP address is: <? echo $_SERVER["REMOTE_ADDR"]; ?>
+      </body>
     <p>
         Student at <a href="https://www.griffinsinternationalschool.in/">Griffins International School, Kharagpur</a> |
         Senior Researcher at <a href="https://www.google.com">Google</a> | Computer Science and Engineering | <a
