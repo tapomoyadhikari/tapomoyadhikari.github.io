@@ -4,8 +4,6 @@
     "name": "Tapomoy Adhikari",
     "givenName": "Tapomoy",
     "familyName": "Adhikari",
-    "fatherName": ["Prof. Tarun Adhikari, AMIE"],
-    "motherName": ["Arpita Adhikari"],
     "jobTitle": "Principal Researcher",
     "affiliation": {
       "@type": "Organization",
@@ -13,7 +11,7 @@
       "sameAs": "https://research.corgnit.com"
     },
     "url": "https://tapomoy.co.in",
-    "image": "https://tapomoy.co.in/images/17-1.png",
+    "image": "https://tapomoy.co.in/images/pp-tapomoy-lab.png",
     "sameAs": [
       "https://twitter.com/tapomoyadhikari",
       "https://www.linkedin.com/in/tapomoyadhikari",
@@ -29,10 +27,10 @@
     "nationality": "Indian",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "5th Main, HSR Layout",
+      "streetAddress": "12th Cross Road, Koramangala",
       "addressLocality": "Bengaluru",
       "addressRegion": "Karnataka",
-      "postalCode": "560102",
+      "postalCode": "560034",
       "addressCountry": "India"
     },
     "email": "tapomoy@corgnit.com",
