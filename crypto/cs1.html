@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Case Study: Local-First Encrypted Task Management</title>
+</head>
+<body>
+
+<h1>Case Study: Local-First Encrypted Task Management System with GitHub-Based Synchronization</h1>
+
+<p>The design and implementation of a local-first encrypted task management system provide a compact example of how client-side technologies can support secure data handling without any dedicated backend infrastructure. The system is implemented as a single HTML file containing the user interface, application logic, cryptographic operations, and synchronization functions. It operates entirely within the web browser environment and uses <code>LocalStorage</code> for persistent state, <code>AES-GCM</code> for encryption, and the GitHub REST API for remote synchronization of encrypted data.</p>
+
+<p>The primary architectural choice is that the client device functions as the authoritative data store. All operations occur locally, and network connectivity is not required for normal use. When synchronization is enabled, the application interacts with a private GitHub repository, treating the repository as an untrusted remote file store. Only encrypted content is uploaded. This structure encourages students to examine the concept of local-first systems: the application remains fully functional in offline conditions, and cloud storage acts only as a replication target.</p>
+
+<p>The cryptographic model centers on a master password chosen by the user. This password is processed through a key derivation function that produces a symmetric key for use with <code>AES-GCM</code>. All application data, including the task list, synchronization metadata, the GitHub Personal Access Token, and the optional TOTP secret, is encrypted before storage. AES-GCM provides confidentiality and integrity, allowing students to observe a practical example of authenticated encryption. The system assumes that the GitHub repository may be read by an adversary. Since only ciphertext is stored remotely, compromise of the repository does not reveal the plaintext contents.</p>
+
+<p>The synchronization process demonstrates a simple method for propagating encrypted state through an external service. During each synchronization cycle, the application retrieves the encrypted file from GitHub, decrypts it locally, merges it with the current local state, re-encrypts the updated data, and commits the result back to the repository. This process shows how an existing platform can serve as a versioned storage backend. Students can observe how commit history provides automatic state versioning and how encryption allows secure use of a generally untrusted storage provider.</p>
+
+<p>The system also includes optional multi-factor authentication through a TOTP mechanism that conforms to RFC 6238. When enabled, the user must provide both the master password and a time-based one-time code from an authenticator application. The TOTP secret is encrypted using the same key that protects the task data. This allows instructors to highlight how MFA can be supported entirely on the client side without a server to verify authentication codes.</p>
+
+<p>From an academic perspective, this system is appropriate for demonstrating several principles relevant to cryptography and secure system design. First, it shows how symmetric encryption and key derivation can be applied in a client-side context. Second, it illustrates separation of trust, where cryptography compensates for an untrusted storage provider. Third, it provides a clear case of a local-first architecture, which is increasingly relevant in modern distributed applications. Fourth, the entire project is contained in a single static file, allowing students to study a complete working system without the complexity of multi-layered infrastructures.</p>
+
+
+
+</body>
+</html>
